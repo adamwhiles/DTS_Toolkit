@@ -52,19 +52,31 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtSearchedID = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtSearchedName = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.txtHostName = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtRAM = new System.Windows.Forms.TextBox();
+            this.txtImportLoc = new System.Windows.Forms.TextBox();
+            this.btnImportNames = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtBIOSVer = new System.Windows.Forms.TextBox();
+            this.txtSerial = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtMAC = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtManf = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtModel = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtIP = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtRAM = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.txtHostName = new System.Windows.Forms.TextBox();
+            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,7 +93,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(596, 295);
+            this.tabControl1.Size = new System.Drawing.Size(596, 255);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -91,7 +103,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(588, 269);
+            this.tabPage1.Size = new System.Drawing.Size(588, 229);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "AD Tools";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -100,12 +112,10 @@
             // 
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.txtSearchedID);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtSearchedName);
             this.groupBox1.Location = new System.Drawing.Point(0, 16);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(582, 250);
+            this.groupBox1.Size = new System.Drawing.Size(582, 213);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Lookup";
@@ -292,30 +302,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(388, 12);
+            this.button1.Location = new System.Drawing.Point(193, 13);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtSearchedID
-            // 
-            this.txtSearchedID.Location = new System.Drawing.Point(218, 15);
-            this.txtSearchedID.Name = "txtSearchedID";
-            this.txtSearchedID.Size = new System.Drawing.Size(164, 20);
-            this.txtSearchedID.TabIndex = 3;
-            this.txtSearchedID.Text = "Employee ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(193, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Or";
             // 
             // txtSearchedName
             // 
@@ -325,7 +318,7 @@
             this.txtSearchedName.Size = new System.Drawing.Size(179, 20);
             this.txtSearchedName.TabIndex = 1;
             this.txtSearchedName.Text = "Name";
-            this.txtSearchedName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtSearchedName.TextChanged += new System.EventHandler(this.txtSearchedName_TextChanged);
             // 
             // tabPage2
             // 
@@ -333,7 +326,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(588, 269);
+            this.tabPage2.Size = new System.Drawing.Size(588, 229);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mapping Tools";
             // 
@@ -342,20 +335,28 @@
             this.tabPage3.BackColor = System.Drawing.SystemColors.Menu;
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(588, 269);
+            this.tabPage3.Size = new System.Drawing.Size(588, 229);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Other Tools";
-            // 
-            // directorySearcher1
-            // 
-            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
             // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Menu;
-            this.tabPage4.Controls.Add(this.textBox3);
+            this.tabPage4.Controls.Add(this.txtImportLoc);
+            this.tabPage4.Controls.Add(this.btnImportNames);
+            this.tabPage4.Controls.Add(this.label16);
+            this.tabPage4.Controls.Add(this.txtUser);
+            this.tabPage4.Controls.Add(this.label15);
+            this.tabPage4.Controls.Add(this.txtBIOSVer);
+            this.tabPage4.Controls.Add(this.txtSerial);
+            this.tabPage4.Controls.Add(this.label14);
+            this.tabPage4.Controls.Add(this.txtMAC);
+            this.tabPage4.Controls.Add(this.label12);
+            this.tabPage4.Controls.Add(this.txtManf);
+            this.tabPage4.Controls.Add(this.label9);
+            this.tabPage4.Controls.Add(this.txtModel);
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.txtIP);
             this.tabPage4.Controls.Add(this.label6);
             this.tabPage4.Controls.Add(this.txtRAM);
             this.tabPage4.Controls.Add(this.label3);
@@ -363,17 +364,164 @@
             this.tabPage4.Controls.Add(this.txtHostName);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(588, 269);
+            this.tabPage4.Size = new System.Drawing.Size(588, 229);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "PC Info";
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
-            // txtHostName
+            // txtImportLoc
             // 
-            this.txtHostName.Location = new System.Drawing.Point(10, 7);
-            this.txtHostName.Name = "txtHostName";
-            this.txtHostName.Size = new System.Drawing.Size(192, 20);
-            this.txtHostName.TabIndex = 0;
-            this.txtHostName.Text = "Remote PC Host Name";
+            this.txtImportLoc.Location = new System.Drawing.Point(376, 6);
+            this.txtImportLoc.Name = "txtImportLoc";
+            this.txtImportLoc.ReadOnly = true;
+            this.txtImportLoc.Size = new System.Drawing.Size(100, 20);
+            this.txtImportLoc.TabIndex = 19;
+            // 
+            // btnImportNames
+            // 
+            this.btnImportNames.Location = new System.Drawing.Point(294, 7);
+            this.btnImportNames.Name = "btnImportNames";
+            this.btnImportNames.Size = new System.Drawing.Size(75, 23);
+            this.btnImportNames.TabIndex = 18;
+            this.btnImportNames.Text = "Import";
+            this.btnImportNames.UseVisualStyleBackColor = true;
+            this.btnImportNames.Click += new System.EventHandler(this.btnImportNames_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(310, 58);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(69, 13);
+            this.label16.TabIndex = 17;
+            this.label16.Text = "Current User:";
+            // 
+            // txtUser
+            // 
+            this.txtUser.Location = new System.Drawing.Point(385, 55);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.ReadOnly = true;
+            this.txtUser.Size = new System.Drawing.Size(199, 20);
+            this.txtUser.TabIndex = 16;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(1, 59);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(73, 13);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "BIOS Version:";
+            // 
+            // txtBIOSVer
+            // 
+            this.txtBIOSVer.Location = new System.Drawing.Point(80, 56);
+            this.txtBIOSVer.Name = "txtBIOSVer";
+            this.txtBIOSVer.ReadOnly = true;
+            this.txtBIOSVer.Size = new System.Drawing.Size(112, 20);
+            this.txtBIOSVer.TabIndex = 14;
+            // 
+            // txtSerial
+            // 
+            this.txtSerial.Location = new System.Drawing.Point(80, 82);
+            this.txtSerial.Name = "txtSerial";
+            this.txtSerial.ReadOnly = true;
+            this.txtSerial.Size = new System.Drawing.Size(112, 20);
+            this.txtSerial.TabIndex = 13;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(26, 85);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(46, 13);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Serial #:";
+            // 
+            // txtMAC
+            // 
+            this.txtMAC.Location = new System.Drawing.Point(80, 208);
+            this.txtMAC.Name = "txtMAC";
+            this.txtMAC.ReadOnly = true;
+            this.txtMAC.Size = new System.Drawing.Size(112, 20);
+            this.txtMAC.TabIndex = 11;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(39, 212);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(33, 13);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "MAC:";
+            // 
+            // txtManf
+            // 
+            this.txtManf.Location = new System.Drawing.Point(80, 108);
+            this.txtManf.Name = "txtManf";
+            this.txtManf.ReadOnly = true;
+            this.txtManf.Size = new System.Drawing.Size(112, 20);
+            this.txtManf.TabIndex = 9;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(1, 110);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Manufacturer:";
+            // 
+            // txtModel
+            // 
+            this.txtModel.Location = new System.Drawing.Point(80, 134);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.ReadOnly = true;
+            this.txtModel.Size = new System.Drawing.Size(112, 20);
+            this.txtModel.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(35, 137);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Model:";
+            // 
+            // txtIP
+            // 
+            this.txtIP.Location = new System.Drawing.Point(80, 184);
+            this.txtIP.Name = "txtIP";
+            this.txtIP.ReadOnly = true;
+            this.txtIP.Size = new System.Drawing.Size(112, 20);
+            this.txtIP.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 187);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "IP Addr: ";
+            // 
+            // txtRAM
+            // 
+            this.txtRAM.Location = new System.Drawing.Point(80, 159);
+            this.txtRAM.Name = "txtRAM";
+            this.txtRAM.ReadOnly = true;
+            this.txtRAM.Size = new System.Drawing.Size(112, 20);
+            this.txtRAM.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(40, 162);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "RAM:";
             // 
             // button4
             // 
@@ -385,39 +533,20 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label3
+            // txtHostName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "RAM";
+            this.txtHostName.Location = new System.Drawing.Point(10, 7);
+            this.txtHostName.Name = "txtHostName";
+            this.txtHostName.Size = new System.Drawing.Size(192, 20);
+            this.txtHostName.TabIndex = 0;
+            this.txtHostName.Text = "Remote PC Host Name";
+            this.txtHostName.TextChanged += new System.EventHandler(this.txtHostName_TextChanged);
             // 
-            // txtRAM
+            // directorySearcher1
             // 
-            this.txtRAM.Location = new System.Drawing.Point(47, 56);
-            this.txtRAM.Name = "txtRAM";
-            this.txtRAM.ReadOnly = true;
-            this.txtRAM.Size = new System.Drawing.Size(168, 20);
-            this.txtRAM.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 96);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "IP Addr: ";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(57, 93);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
             // 
             // Form1
             // 
@@ -425,7 +554,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 255);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "DTS Toolkit";
             this.tabControl1.ResumeLayout(false);
@@ -454,8 +585,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtSearchedID;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSearchedName;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -472,12 +601,26 @@
         private System.Windows.Forms.Label lblHome;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtIP;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtRAM;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtHostName;
+        private System.Windows.Forms.TextBox txtManf;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtModel;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtMAC;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtSerial;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtBIOSVer;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnImportNames;
+        private System.Windows.Forms.TextBox txtImportLoc;
     }
 }
 
