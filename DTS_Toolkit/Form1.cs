@@ -41,7 +41,7 @@ namespace DTS_Toolkit
         {
             String searchName = txtSearchedName.Text;
             //Setup LDAP to connect to AD
-            DirectoryEntry deRoot = new DirectoryEntry("LDAP://afni.net");
+            DirectoryEntry deRoot = new DirectoryEntry("LDAP://*INSERTDOMAIN");
             DirectorySearcher dsFindUser = new DirectorySearcher(deRoot);
             // Setup filter to search for name input by the user
             dsFindUser.Filter = "(&(objectClass=user)(samaccountname="+ searchName +"))";
